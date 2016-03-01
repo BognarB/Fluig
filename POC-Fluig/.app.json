@@ -12,66 +12,19 @@
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "signinLabel": "Sign In",
-          "signinRedirect": "formView",
+          "signinRedirect": "home",
           "enableRegistration": true,
           "gotoRegisterLabel": "Register",
           "registerEmailLabel": "Email",
           "registerPasswordLabel": "Password",
           "registerNameLabel": "Name",
           "registerLabel": "Register",
-          "registerRedirect": "home",
+          "registerRedirect": "formNovoContato",
           "gotoSigninLabel": "Sign In"
         }
       ],
       "title": "Login",
       "addToNavigation": false
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "formView",
-      "components": [
-        {
-          "type": "kendo-ui-mobile:form",
-          "components": [
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "name",
-              "title": "Nome",
-              "inputType": "text"
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "gender",
-              "title": "Sexo",
-              "inputType": "text"
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "birthdate",
-              "title": "Birthday",
-              "inputType": "text"
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "email",
-              "title": "Email",
-              "inputType": "email"
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "mobile",
-              "title": "Telefone",
-              "inputType": "tel"
-            }
-          ],
-          "name": "formViewModel",
-          "submitButton": "Salvar",
-          "cancelButton": "Próximo"
-        }
-      ],
-      "title": "New Contact",
-      "addToNavigation": true,
-      "icon": "add"
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -122,6 +75,32 @@
       "title": "About",
       "addToNavigation": true,
       "icon": "info"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "formNovoContato",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:list",
+          "name": "formNovoContatoModel",
+          "dataProvider": "randomUser",
+          "collection": "results",
+          "iconField": true,
+          "imageField": "user.picture.medium",
+          "headerField": "user.name.first",
+          "subHeaderField": "user.email",
+          "masterDetails": true,
+          "detailHeaderField": "user.name.first",
+          "detailSubHeaderField": "user.email",
+          "detailDescriptionField": "user.cell",
+          "detailImageField": "user.picture.medium",
+          "pullToRefresh": true,
+          "endlessScroll": false
+        }
+      ],
+      "title": "Novo Contato",
+      "addToNavigation": true,
+      "icon": "organize"
     }
   ],
   "dataProviders": [
