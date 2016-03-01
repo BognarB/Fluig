@@ -132,6 +132,13 @@
       "source": "everlive",
       "everliveKey": "wv0d83ilst7ofhwd",
       "offlineStorage": true
+    },
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "randomUser",
+      "title": "RandomUser-Json",
+      "source": "json",
+      "url": "https://api.randomuser.me/api/"
     }
   ],
   "name": "kendoUiMobileApp",
