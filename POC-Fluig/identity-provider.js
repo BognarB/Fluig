@@ -14,6 +14,24 @@ function getParameterByName(name, url) {
 
 var IdentityProvider = function (config) {
     var that = this;
+    var _currentUser;
+    var _token;
+
+    this._getUserInfo = function(callback){
+        var user = {};
+
+        $.get('https://graph.facebook.com/v2.5/me',{
+            fields: 'id,name,picture',
+            access_token: _token,
+            dataType: 'json'
+        },callback);
+
+    }
+
+    this.getCurrentUser = function(){
+        if(_currentUser) return _currentUser;
+        throw "Need to getAccessToken() first";
+    }
 
     this.getAccessToken = function (callback) {
 
@@ -36,11 +54,15 @@ var IdentityProvider = function (config) {
     }
 
     this.locationChanged = function (loc, callback) {
-            console.log(loc);
         if (loc.indexOf('access_token=') !== -1) {
             ref.close();
-            var token = getParameterByName('access_token', loc);
-            callback(token);
+            var token = _token = getParameterByName('access_token', loc);
+            console.log('access_token:',token);
+            this._getUserInfo(function(facebookUser){
+                _currentUser = facebookUser;
+                callback(token);
+            });
+            
         }
     }
 }
