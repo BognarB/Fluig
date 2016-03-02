@@ -92,7 +92,7 @@ function getBinFromURL(URL){
                 var item = e.view.params.uid,
                     dataSource = novoContatoViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                itemModel.user.picture.thumbnailUrl = processImage(itemModel.user.picture.large);
+                itemModel.user.picture.thumbnailUrl = processImage(itemModel.user.picture.thumbnail);
                 if (!itemModel.user.name.first) {
                     itemModel.user.name.first = String.fromCharCode(160);
                 }
