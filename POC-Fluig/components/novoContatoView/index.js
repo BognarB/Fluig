@@ -11,6 +11,7 @@ app.novoContatoView = kendo.observable({
 // END_CUSTOM_CODE_novoContatoView
 (function(parent) {
     var dataProvider = app.data.ramdomUser,
+        localDataProvider = app.data.localStorage,
         processImage = function(img) {
             if (!img) {
                 var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
@@ -53,6 +54,14 @@ app.novoContatoView = kendo.observable({
                             field: 'user.picture.thumbnail',
                             defaultValue: ''
                         },
+                        'user.email': {
+                            field: 'user.email',
+                            defaultValue: ''
+                        },
+                        'user.phone': {
+                            field: 'user.phone',
+                            defaultValue: ''
+                        }
                     }
                 }
             },
@@ -73,10 +82,12 @@ app.novoContatoView = kendo.observable({
                 }
                 novoContatoViewModel.set('currentItem', itemModel);
             },
-            saveClick: function(){
-                console.log('save');
+            saveClick: function() {
+                localDataProvider.add(novoContatoViewModel.currentItem.user);
+                localDataProvider.sync();
+                novoContatoViewModel.nextClick();
             },
-            nextClick: function(){
+            nextClick: function() {
                 var dataSource = novoContatoViewModel.get('dataSource');
                 dataSource.read();
             },

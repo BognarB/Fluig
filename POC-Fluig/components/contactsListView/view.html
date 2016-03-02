@@ -9,9 +9,10 @@
     <!-- START_CUSTOM_CODE_contactsListViewModel -->
     <!-- END_CUSTOM_CODE_contactsListViewModel -->
     <script type="text/x-kendo-template" id="contactsListViewModelTemplate">
-        <div class="image-with-text">
-            <h3>#: data['user.name.first'] #</h3>
-
+         <div class="image-with-text" >
+            <img src="#: picture.thumbnailUrl #" width="30%" height="30%">
+            <h3>#: name.first #</h3>
+            <p>#: name.last #</p>
         </div>
     </script>
 </div>
