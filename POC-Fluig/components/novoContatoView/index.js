@@ -7,7 +7,7 @@ app.novoContatoView = kendo.observable({
 
 function getBinFromURL(URL){
     
-    jQuery.getJSON('//image2datauri.jit.su?cb=?', {
+   /* jQuery.getJSON('//image2datauri.jit.su?cb=?', {
       url: 'http://nodejs.org/images/logo-light.png'
     }, function(data) {
 
@@ -17,7 +17,7 @@ function getBinFromURL(URL){
 
       console.log(data.data);
       
-    })
+    })*/
 }
 
 
