@@ -1,16 +1,16 @@
 'use strict';
 
-app.formNovoContato = kendo.observable({
+app.novoContatoView = kendo.observable({
     onShow: function() {},
     afterShow: function() {}
 });
 
-// START_CUSTOM_CODE_formNovoContato
+// START_CUSTOM_CODE_novoContatoView
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-// END_CUSTOM_CODE_formNovoContato
+// END_CUSTOM_CODE_novoContatoView
 (function(parent) {
-    var dataProvider = app.data.randomUser,
+    var dataProvider = app.data.ramdomUser,
         processImage = function(img) {
             if (!img) {
                 var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
@@ -32,8 +32,8 @@ app.formNovoContato = kendo.observable({
                 for (var i = 0; i < data.length; i++) {
                     var dataItem = data[i];
 
-                    dataItem['user.picture.mediumUrl'] =
-                        processImage(dataItem['user.picture.medium']);
+                    dataItem['user.picture.thumbnailUrl'] =
+                        processImage(dataItem['user.picture.thumbnail']);
 
                 }
             },
@@ -45,51 +45,33 @@ app.formNovoContato = kendo.observable({
                             field: 'user.name.first',
                             defaultValue: ''
                         },
-                        'user.email': {
-                            field: 'user.email',
+                        'user.name.last': {
+                            field: 'user.name.last',
                             defaultValue: ''
                         },
-                        'user.picture.medium': {
-                            field: 'user.picture.medium',
+                        'user.picture.thumbnail': {
+                            field: 'user.picture.thumbnail',
                             defaultValue: ''
                         },
-                    },
-                    icon: function() {
-                        var i = 'globe';
-                        return kendo.format('km-icon km-{0}', i);
                     }
                 }
             },
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
-        formNovoContatoModel = kendo.observable({
-            dataSource: dataSource,
-            itemClick: function(e) {
-                app.mobileApp.navigate('#components/formNovoContato/details.html?uid=' + e.dataItem.uid);
-            },
-            detailsShow: function(e) {
-                var item = e.view.params.uid,
-                    dataSource = formNovoContatoModel.get('dataSource'),
-                    itemModel = dataSource.getByUid(item);
-                itemModel.user.picture.mediumUrl = processImage(itemModel.user.picture.medium);
-                if (!itemModel.user.name.first) {
-                    itemModel.user.name.first = String.fromCharCode(160);
-                }
-                formNovoContatoModel.set('currentItem', itemModel);
-            },
-            currentItem: null
+        novoContatoViewModel = kendo.observable({
+            dataSource: dataSource
         });
 
     if (typeof dataProvider.sbProviderReady === 'function') {
         dataProvider.sbProviderReady(function dl_sbProviderReady() {
-            parent.set('formNovoContatoModel', formNovoContatoModel);
+            parent.set('novoContatoViewModel', novoContatoViewModel);
         });
     } else {
-        parent.set('formNovoContatoModel', formNovoContatoModel);
+        parent.set('novoContatoViewModel', novoContatoViewModel);
     }
-})(app.formNovoContato);
+})(app.novoContatoView);
 
-// START_CUSTOM_CODE_formNovoContatoModel
+// START_CUSTOM_CODE_novoContatoViewModel
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-// END_CUSTOM_CODE_formNovoContatoModel
+// END_CUSTOM_CODE_novoContatoViewModel

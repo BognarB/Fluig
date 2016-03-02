@@ -13,13 +13,13 @@
     <script src="app.js"></script>
     <script src="bower_components/everlive/min/everlive.all.min.js"></script>
     <script src="dataProviders/pocFluig.js"></script>
-    <script src="dataProviders/randomUser.js"></script>
+    <script src="dataProviders/ramdomUser.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
-    <script src="components/formNovoContato/index.js"></script>
     <script src="components/aboutView/index.js"></script>
     <script src="components/contactsListView/index.js"></script>
+    <script src="components/novoContatoView/index.js"></script>
     <script src="components/home/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
@@ -32,9 +32,9 @@
 
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
+                <a href="components/novoContatoView/view.html" data-icon="organize">Novo Contato</a>
                 <a href="components/contactsListView/view.html" data-icon="organize">Contatos Favoritos</a>
                 <a href="components/aboutView/view.html" data-icon="info">About</a>
-                <a href="components/formNovoContato/view.html" data-icon="organize">Novo Contato</a>
             </div>
         </footer>
     </div>

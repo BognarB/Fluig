@@ -12,19 +12,40 @@
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "signinLabel": "Sign In",
-          "signinRedirect": "home",
+          "signinRedirect": "novoContatoView",
           "enableRegistration": true,
           "gotoRegisterLabel": "Register",
           "registerEmailLabel": "Email",
           "registerPasswordLabel": "Password",
           "registerNameLabel": "Name",
           "registerLabel": "Register",
-          "registerRedirect": "formNovoContato",
+          "registerRedirect": "home",
           "gotoSigninLabel": "Sign In"
         }
       ],
       "title": "Login",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "novoContatoView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:list",
+          "name": "novoContatoViewModel",
+          "dataProvider": "ramdomUser",
+          "collection": "results",
+          "imageField": "user.picture.thumbnail",
+          "headerField": "user.name.first",
+          "subHeaderField": "user.name.last",
+          "masterDetails": false,
+          "pullToRefresh": false,
+          "endlessScroll": false
+        }
+      ],
+      "title": "Novo Contato",
+      "addToNavigation": true,
+      "icon": "organize"
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -75,32 +96,6 @@
       "title": "About",
       "addToNavigation": true,
       "icon": "info"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "formNovoContato",
-      "components": [
-        {
-          "type": "kendo-ui-mobile:list",
-          "name": "formNovoContatoModel",
-          "dataProvider": "randomUser",
-          "collection": "results",
-          "iconField": true,
-          "imageField": "user.picture.medium",
-          "headerField": "user.name.first",
-          "subHeaderField": "user.email",
-          "masterDetails": true,
-          "detailHeaderField": "user.name.first",
-          "detailSubHeaderField": "user.email",
-          "detailDescriptionField": "user.cell",
-          "detailImageField": "user.picture.medium",
-          "pullToRefresh": true,
-          "endlessScroll": false
-        }
-      ],
-      "title": "Novo Contato",
-      "addToNavigation": true,
-      "icon": "organize"
     }
   ],
   "dataProviders": [
@@ -114,10 +109,10 @@
     },
     {
       "type": "kendo-ui-mobile:dataProvider",
-      "name": "randomUser",
-      "title": "RandomUser-Json",
+      "name": "ramdomUser",
+      "title": "RamdomUser",
       "source": "json",
-      "url": "https://api.randomuser.me/api/"
+      "url": "https://randomuser.me/api/"
     }
   ],
   "name": "kendoUiMobileApp",
