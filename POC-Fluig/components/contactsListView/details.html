@@ -1,6 +1,6 @@
 <div data-role="view" data-title="Details" data-model="app.contactsListView.contactsListViewModel" data-bind="events: { show: detailsShow }" id="contactsListViewModelDetailsView">
     <header data-role="header">
-        
+
     </header>
 
     <div class="details-content">
@@ -20,11 +20,14 @@
             <label>Telefone:<span data-bind="text: currentItem.user.phone"></span></label>
         </p>
     </div>
-    <div data-role="navbar" > 
-        <a data-role="button" data-align="left" data-bind="events: { click: deleteClick }"><i class="km-icon km-delete"></i>Excluir</a>
+    <!-- <div data-role="navbar" > 
+        <a class="primary" data-role="button" data-align="left" data-bind="events: { click: deleteClick }"><i class="km-icon km-delete"></i>Excluir</a>
+        <a data-role="backbutton" data-align="right" class="primary" >Fechar</a>
+    </div> -->
+    <div class="button-group button-group-vertical">
+        <a class="primary"  data-role="button" class="primary" data-bind="events: { click: deleteClick }"><i class="km-icon km-delete"></i>Excluir</a>
         <a data-role="backbutton" data-align="right" >Fechar</a>
-           
-        </div>
+    </div>
     <!-- START_CUSTOM_CODE_contactsListViewModel -->
     <!-- END_CUSTOM_CODE_contactsListViewModel -->
 </div>

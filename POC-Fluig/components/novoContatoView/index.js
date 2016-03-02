@@ -59,7 +59,28 @@ app.novoContatoView = kendo.observable({
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         novoContatoViewModel = kendo.observable({
-            dataSource: dataSource
+            dataSource: dataSource,
+            itemClick: function(e) {
+                app.mobileApp.navigate('#components/novoContatoView/details.html?uid=' + e.dataItem.uid);
+            },
+            detailsShow: function(e) {
+                var item = e.view.params.uid,
+                    dataSource = novoContatoViewModel.get('dataSource'),
+                    itemModel = dataSource.getByUid(item);
+                itemModel.user.picture.thumbnailUrl = processImage(itemModel.user.picture.thumbnail);
+                if (!itemModel.user.name.first) {
+                    itemModel.user.name.first = String.fromCharCode(160);
+                }
+                novoContatoViewModel.set('currentItem', itemModel);
+            },
+            saveClick: function(){
+                console.log('save');
+            },
+            nextClick: function(){
+                var dataSource = novoContatoViewModel.get('dataSource');
+                dataSource.read();
+            },
+            currentItem: null
         });
 
     if (typeof dataProvider.sbProviderReady === 'function') {

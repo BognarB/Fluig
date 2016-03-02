@@ -187,7 +187,7 @@
     /* Half the width */
   
 }
-.km-flat .km-view .km-navbar .km-button {
+/*.km-flat .km-view .km-navbar .km-button {
     background-color:#008CBA; 
     border: none;
     color: white;
@@ -201,9 +201,7 @@
 .km-flat .km-view .km-navbar .km-button .km-text {
     color: rgb(255, 255, 255);
 }
-
-    
-}
+*/
 
 
 /* END_CUSTOM_CODE_kendoUiMobileApp */
