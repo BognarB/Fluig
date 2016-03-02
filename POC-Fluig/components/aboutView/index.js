@@ -17,6 +17,11 @@ app.aboutView = kendo.observable({
                 window.event.preventDefault && window.event.preventDefault();
                 window.event.returnValue = false;
             }
+        },
+        clearLocalData: function(){
+            localStorage.clear();
+            setTestData();
+            alert('Storage Cleared!');
         }
     });
 
