@@ -1,111 +1,23 @@
 'use strict';
 
 app.home = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function () {},
+    afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_home
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 // END_CUSTOM_CODE_home
-(function(parent) {
+
+// START_CUSTOM_CODE_homeModel
+// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+(function (parent) {
     var provider = app.data.pocFluig,
         mode = 'signin',
         registerRedirect = 'home',
         signinRedirect = 'novoContatoView',
-        init = function(error) {
-            if (error) {
-                if (error.message) {
-                    alert(error.message);
-                }
-                return false;
-            }
-
-            var activeView = mode === 'signin' ? '.signin-view' : '.signup-view';
-
-            if (provider.setup && provider.setup.offlineStorage && !app.isOnline()) {
-                $('.offline').show().siblings().hide();
-            } else {
-                $(activeView).show().siblings().hide();
-            }
-        },
-        successHandler = function(data) {
-            var redirect = mode === 'signin' ? signinRedirect : registerRedirect;
-
-            if (data && data.result) {
-                app.user = data.result;
-
-                setTimeout(function() {
-                    app.mobileApp.navigate('components/' + redirect + '/view.html');
-                }, 0);
-            } else {
-                init();
-            }
-        },
-        homeModel = kendo.observable({
-            displayName: '',
-            email: '',
-            password: '',
-            validateData: function(data) {
-                if (!data.email) {
-                    alert('Missing email');
-                    return false;
-                }
-
-                if (!data.password) {
-                    alert('Missing password');
-                    return false;
-                }
-
-                return true;
-            },
-            signin: function() {
-                var model = homeModel,
-                    email = model.email.toLowerCase(),
-                    password = model.password;
-
-                if (!model.validateData(model)) {
-                    return false;
-                }
-                provider.Users.login(email, password, successHandler, init);
-            },
-            register: function() {
-                var model = homeModel,
-                    email = model.email.toLowerCase(),
-                    password = model.password,
-                    displayName = model.displayName,
-                    attrs = {
-                        Email: email,
-                        DisplayName: displayName
-                    };
-
-                if (!model.validateData(model)) {
-                    return false;
-                }
-
-                provider.Users.register(email, password, attrs, successHandler, init);
-            },
-            toggleView: function() {
-                mode = mode === 'signin' ? 'register' : 'signin';
-                init();
-            }
-        });
-
-    parent.set('homeModel', homeModel);
-    parent.set('afterShow', function() {
-        provider.Users.currentUser().then(successHandler, init);
-    });
-})(app.home);
-
-// START_CUSTOM_CODE_homeModel
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-(function(parent) {
-    var provider = app.data.pocFluig,
-        mode = 'signin',
-        registerRedirect = 'formView',
-        signinRedirect = 'formView',
-        init = function(error) {
+        init = function (error) {
             if (error) {
                 alert(error);
                 if (error.message) {
@@ -126,13 +38,13 @@ app.home = kendo.observable({
                 $(activeView).show().siblings().hide();
             }
         },
-        successHandler = function(data) {
+        successHandler = function (data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect;
 
             if (data && data.result) {
                 app.user = data.result;
 
-                setTimeout(function() {
+                setTimeout(function () {
                     app.mobileApp.navigate('components/' + redirect + '/view.html');
                 }, 0);
             } else {
@@ -143,7 +55,7 @@ app.home = kendo.observable({
             displayName: '',
             email: '',
             password: '',
-            validateData: function(data) {
+            validateData: function (data) {
                 if (!data.email) {
                     alert('Missing email');
                     return false;
@@ -156,7 +68,7 @@ app.home = kendo.observable({
 
                 return true;
             },
-            signin: function() {
+            signin: function () {
                 var model = homeModel,
                     email = model.email.toLowerCase(),
                     password = model.password;
@@ -166,7 +78,7 @@ app.home = kendo.observable({
                 }
                 provider.Users.login(email, password, successHandler, init);
             },
-            register: function() {
+            register: function () {
                 var model = homeModel,
                     email = model.email.toLowerCase(),
                     password = model.password,
@@ -182,7 +94,7 @@ app.home = kendo.observable({
 
                 provider.Users.register(email, password, attrs, successHandler, init);
             },
-            facebookLogin: function() {
+            facebookLogin: function () {
 
                 var facebookConfig = {
                     name: 'Facebook',
@@ -200,19 +112,19 @@ app.home = kendo.observable({
 
                 app.mobileApp.showLoading();
 
-                facebook.getAccessToken(function(token) {
+                facebook.getAccessToken(function (token) {
                     provider.Users.loginWithFacebook(token)
-                        .then(function() {
+                        .then(function () {
                             app.mobileApp.hideLoading();
-                            provider.User.currentUser(successHandler, init);
+                            provider.Users.currentUser(successHandler, init);
                         });
                 });
             },
-            toggleView: function() {
+            toggleView: function () {
                 mode = mode === 'signin' ? 'register' : 'signin';
                 init();
             },
-            resetForm: function() {
+            resetForm: function () {
                 this.set("email", "");
                 this.set("password", "");
                 init();
@@ -220,7 +132,7 @@ app.home = kendo.observable({
         });
 
     parent.set('homeModel', homeModel);
-    parent.set('afterShow', function() {
+    parent.set('afterShow', function () {
         homeModel.resetForm();
     });
 })(app.home);
