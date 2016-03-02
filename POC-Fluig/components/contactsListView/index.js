@@ -45,7 +45,7 @@ app.contactsListView = kendo.observable({
             var item = e.view.params.uid,
             dataSource = contactsListViewModel.get('dataSource'),
             itemModel = dataSource.getByUid(item);
-            itemModel.picture.mediumUrl = processImage(itemModel.picture.medium);
+            itemModel.picture.mediumUrl = processImage(itemModel.picture.large);
 
             if (!itemModel.name.first) {
                 itemModel.name.first = String.fromCharCode(160);

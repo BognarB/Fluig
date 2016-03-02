@@ -1,7 +1,6 @@
 'use strict';
 
 function setTestData(){
-	console.log('setting data');
 	localStorage["contacts"] = JSON.stringify([]);
 }
 
