@@ -12,8 +12,8 @@ app.home = kendo.observable({
 (function(parent) {
     var provider = app.data.pocFluig,
         mode = 'signin',
-        registerRedirect = 'home',
-        signinRedirect = 'novoContatoView',
+        registerRedirect = 'contactsListView',
+        signinRedirect = 'contactsListView',
         init = function(error) {
             if (error) {
                 if (error.message) {

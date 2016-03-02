@@ -10,50 +10,34 @@ app.contactsListView = kendo.observable({
 
 // END_CUSTOM_CODE_contactsListView
 (function(parent) {
-    var dataProvider = app.data.pocFluig,
-        flattenLocationProperties = function(dataItem) {
-            var propName, propValue,
-                isLocation = function(value) {
-                    return propValue && typeof propValue === 'object' &&
-                        propValue.longitude && propValue.latitude;
-                };
-
-            for (propName in dataItem) {
-                if (dataItem.hasOwnProperty(propName)) {
-                    propValue = dataItem[propName];
-                    if (isLocation(propValue)) {
-                        dataItem[propName] =
-                            kendo.format('Latitude: {0}, Longitude: {1}',
-                                propValue.latitude, propValue.longitude);
-                    }
-                }
+    var dataProvider = app.data.ramdomUser,
+        processImage = function(img) {
+            if (!img) {
+                var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
+                img = 'data:image/png;base64,' + empty1x1png;
             }
+
+            return img;
         },
         dataSourceOptions = {
-            type: 'everlive',
+            type: 'json',
             transport: {
-                typeName: 'Contact',
-                dataProvider: dataProvider
-            },
-
-            change: function(e) {
-                var data = this.data();
-                for (var i = 0; i < data.length; i++) {
-                    var dataItem = data[i];
-
-                    flattenLocationProperties(dataItem);
+                read: {
+                    url: dataProvider.url
                 }
             },
+
             error: function(e) {
                 if (e.xhr) {
                     alert(JSON.stringify(e.xhr));
                 }
             },
             schema: {
+                data: 'results',
                 model: {
                     fields: {
-                        'Name': {
-                            field: 'Name',
+                        'user.name.first': {
+                            field: 'user.name.first',
                             defaultValue: ''
                         },
                     }
@@ -85,9 +69,10 @@ app.contactsListView = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = contactsListViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
+                itemModel.user.picture.mediumUrl = processImage(itemModel.user.picture.medium);
 
-                if (!itemModel.Name) {
-                    itemModel.Name = String.fromCharCode(160);
+                if (!itemModel.user.name.first) {
+                    itemModel.user.name.first = String.fromCharCode(160);
                 }
 
                 contactsListViewModel.set('currentItem', null);

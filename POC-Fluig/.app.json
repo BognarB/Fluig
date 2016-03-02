@@ -12,19 +12,20 @@
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "signinLabel": "Sign In",
-          "signinRedirect": "novoContatoView",
+          "signinRedirect": "contactsListView",
           "enableRegistration": true,
           "gotoRegisterLabel": "Register",
           "registerEmailLabel": "Email",
           "registerPasswordLabel": "Password",
           "registerNameLabel": "Name",
           "registerLabel": "Register",
-          "registerRedirect": "home",
+          "registerRedirect": "contactsListView",
           "gotoSigninLabel": "Sign In"
         }
       ],
       "title": "Login",
-      "addToNavigation": false
+      "addToNavigation": true,
+      "icon": "home"
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -55,12 +56,48 @@
           "type": "kendo-ui-mobile:editableList",
           "listExtraFields": [],
           "detailExtraFields": [],
-          "components": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "shortText",
+                  "title": "Nome:",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "user.name.first"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "sexo",
+                  "title": "Sexo",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "user.gender"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "email",
+                  "title": "Email",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "user.email"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "tel",
+                  "title": "Telefone",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "user.phone"
+                }
+              ],
+              "name": "editableListForm41",
+              "formType": "detail"
+            }
+          ],
           "name": "contactsListViewModel",
-          "dataProvider": "pocFluig",
-          "collection": "Contact",
-          "headerField": "Name",
-          "detailHeaderField": "Name",
+          "dataProvider": "ramdomUser",
+          "collection": "results",
+          "headerField": "user.name.first",
+          "detailImageField": "user.picture.medium",
           "addItemForm": false,
           "editItemForm": false,
           "pullToRefresh": false,
