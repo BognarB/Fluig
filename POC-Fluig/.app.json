@@ -12,20 +12,19 @@
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "signinLabel": "Sign In",
-          "signinRedirect": "contactsListView",
+          "signinRedirect": "novoContatoView",
           "enableRegistration": true,
           "gotoRegisterLabel": "Register",
           "registerEmailLabel": "Email",
           "registerPasswordLabel": "Password",
           "registerNameLabel": "Name",
           "registerLabel": "Register",
-          "registerRedirect": "contactsListView",
+          "registerRedirect": "home",
           "gotoSigninLabel": "Sign In"
         }
       ],
       "title": "Login",
-      "addToNavigation": true,
-      "icon": "home"
+      "addToNavigation": false
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -62,8 +61,8 @@
               "components": [
                 {
                   "type": "kendo-ui-mobile:editableListFormField",
-                  "name": "shortText",
-                  "title": "Nome:",
+                  "name": "nome",
+                  "title": "Nome",
                   "inputType": "shortText",
                   "dataBindingOptional": "user.name.first"
                 },
@@ -83,13 +82,13 @@
                 },
                 {
                   "type": "kendo-ui-mobile:editableListFormField",
-                  "name": "tel",
+                  "name": "telefone",
                   "title": "Telefone",
                   "inputType": "shortText",
                   "dataBindingOptional": "user.phone"
                 }
               ],
-              "name": "editableListForm41",
+              "name": "editableListForm1",
               "formType": "detail"
             }
           ],
