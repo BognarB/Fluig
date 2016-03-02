@@ -20,7 +20,7 @@ app.novoContatoView = kendo.observable({
 
             return img;
         },
-        dataSourceOptions = {
+       dataSourceOptions = {
             type: 'json',
             transport: {
                 read: {
