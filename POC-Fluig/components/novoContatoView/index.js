@@ -3,24 +3,10 @@
 app.novoContatoView = kendo.observable({
     onShow: function() {},
     afterShow: function() {
-        
+    	app.mobileApp.hideLoading();
     }
 });
 
-function getBinFromURL(URL){
-    
-   /* jQuery.getJSON('//image2datauri.jit.su?cb=?', {
-      url: 'http://nodejs.org/images/logo-light.png'
-    }, function(data) {
-
-      var image   = new Image();
-      var canvas  = document.createElement('canvas');
-      var context = canvas.getContext('2d');
-
-      console.log(data.data);
-      
-    })*/
-}
 
 
 // START_CUSTOM_CODE_novoContatoView
@@ -99,16 +85,6 @@ function getBinFromURL(URL){
             dataSource.fetch(function(){
                 app.mobileApp.hideLoading();
                 itemModel = this.data()[0];
-        dataSource = new kendo.data.DataSource(dataSourceOptions),
-        novoContatoViewModel = kendo.observable({
-            dataSource: dataSource,
-            itemClick: function(e) {
-                app.mobileApp.navigate('#components/novoContatoView/details.html?uid=' + e.dataItem.uid);
-            },
-            detailsShow: function(e) {
-                var item = e.view.params.uid,
-                    dataSource = novoContatoViewModel.get('dataSource'),
-                    itemModel = dataSource.getByUid(item);
                 itemModel.user.picture.thumbnailUrl = processImage(itemModel.user.picture.thumbnail);
                 if (!itemModel.user.name.first) {
                     itemModel.user.name.first = String.fromCharCode(160);
@@ -125,9 +101,7 @@ function getBinFromURL(URL){
             var dataSource = novoContatoViewModel.get('dataSource');
             app.mobileApp.showLoading();
             dataSource.read();
-
             window.location.reload();
-            // app.mobileApp.replace('components/novoContatoView/view.html');
         },
         currentItem: null
     });
