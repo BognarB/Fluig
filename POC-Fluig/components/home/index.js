@@ -22,11 +22,9 @@ app.home = kendo.observable({
     signinRedirect = 'novoContatoView',
     init = function (error) {
         if (error) {
-            alert(error);
             if (error.message) {
                 alert(error.message);
             }
-            return false;
         }
 
         if (app.user) {

@@ -188,8 +188,8 @@
     /* Half the height */
     margin-left: 90px;
     /* Half the width */
-  
 }
+
 #kendoUiMobileApp.km-flat .button-group .km-button.totvs{
    color:#02a2c9;
   background-color:#e4e2e2;
@@ -228,6 +228,7 @@ input[type=password]{
 
 
 }
+
 #kendoUiMobileApp.km-flat .button-group .km-button.contatos-fechar{
     color: #fff;
     background-color: #02a2c9;
@@ -236,6 +237,7 @@ input[type=password]{
      margin-left: 170px;
     display: inline-block;
 }
+
 #kendoUiMobileApp.km-flat .button-group .km-button.excluir{
     color: #fff;
     border: 50%;
@@ -251,5 +253,9 @@ input[type=password]{
     background-color: rgb(255, 255, 255);
 }
 
+
+.signin-view{
+    margin-top: 5%;
+} 
 
 /* END_CUSTOM_CODE_kendoUiMobileApp */

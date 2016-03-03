@@ -31,13 +31,13 @@ function reset(){
 			destroy: function(options){
 				var localData = JSON.parse(localStorage["contacts"]);
 				for(var i=0; i<localData.length; i++){
-					if(localData[i] === options.data){
+					if(options.data.username === localData[i].username){
 						localData.splice(i,1);
 						break;
 					}
 				}
 				localStorage["contacts"] = JSON.stringify(localData);
-				options.success(localData);
+				options.success(options.data);
 			}
 		},
 		schema: {
