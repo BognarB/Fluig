@@ -2,7 +2,9 @@
 
 app.aboutView = kendo.observable({
     onShow: function() {},
-    afterShow: function() {}
+    afterShow: function() {
+        app.mobileApp.hideLoading();
+    }
 });
 
 // START_CUSTOM_CODE_aboutView
@@ -19,8 +21,7 @@ app.aboutView = kendo.observable({
             }
         },
         clearLocalData: function(){
-            localStorage.clear();
-            setTestData();
+            reset();
             alert('Storage Cleared!');
         }
     });

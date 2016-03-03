@@ -6,6 +6,7 @@ function setTestData(){
 
 function reset(){
 	setTestData();
+	window.location.reload();
 }
 
 (function () {
@@ -43,62 +44,11 @@ function reset(){
 			model: {
 				id: "ID",
 				fields: {
-					ID: { type: "number", editable: false },
-					Value: { type: "string" }
+					ID: { type: "number", editable: false }
 				}
 			}
 		}
-	}
-	);
-
-
-
-
-	/*
-
-	function setContactsData(array){
-		if(array){
-			console.log('Setting new Contact');
-			localStorage.setItem('contacts',JSON.stringify(array));
-		} else {
-			console.log('Setting Contacts');
-			localStorage.setItem('contacts',JSON.stringify([]));
-		}
-
-	}
-
-	// localStorage.clear();
-	console.log(localStorage.getItem('contacts'));
-	if (!localStorage.getItem('contacts')) setContactsData();
-
-
-	var provider = app.data.localStorage = new kendo.data.DataSource({
-		transport: {
-			create: function(options){
-				console.log(options);
-				var contacts = JSON.parse(localStorage.getItem('contacts'));
-				contacts.push(options.data);
-				setContactsData(contacts);
-				options.success(options.data);
-			},
-			read: function(options){
-				var contacts = JSON.parse(localStorage.getItem('contacts'));
-				options.success(contacts);
-			},
-			destroy: function(options){
-				var contacts = JSON.parse(localStorage.getItem('contacts'));
-				for(var i=0; i< contacts.length; i++){
-					if(contacts[i].ID === options.data.ID){
-						contacts.splice(i,1);
-						break;
-					}
-				}
-				setContactsData(contacts);
-				options.success(contacts);
-			},
-		}
 	});
-	*/
 
 
 

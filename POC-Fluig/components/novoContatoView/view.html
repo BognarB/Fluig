@@ -1,20 +1,28 @@
-<div data-role="view" data-title="Novo Contato" data-layout="main" data-model="app.novoContatoView" data-show="app.novoContatoView.onShow" data-after-show="app.novoContatoView.afterShow">
+<div id="novoContatoView" data-role="view" data-title="Novo Contato" data-layout="main" reload='true'  data-model="app.novoContatoView.novoContatoViewModel"  data-bind="events: { show: detailsShow }">
 
-    <!-- START_CUSTOM_CODE_novoContatoView -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- <img data-bind="attr: { src: currentItem.user.picture.thumbnailUrl }" width="100%" height="auto"> -->
+    <div class="details-content">
 
-    <!-- END_CUSTOM_CODE_novoContatoView -->
-    <ul data-role="listview" data-style="inset" data-template="novoContatoViewModelTemplate" data-bind="{ source: novoContatoViewModel.dataSource, events: {click: novoContatoViewModel.itemClick}}" data-pull-to-refresh="false" data-endless-scroll="false">
-    </ul>
-    <!-- START_CUSTOM_CODE_novoContatoViewModel -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 
-    <!-- END_CUSTOM_CODE_novoContatoViewModel -->
-    <script type="text/x-kendo-template" id="novoContatoViewModelTemplate">
-        <div class="image-with-text" >
-            <img src="#: data['user.picture.thumbnailUrl'] #" width="30%" height="30%">
-            <h3>#: data['user.name.first'] #</h3>
-            <p>#: data['user.name.last'] #</p>
-        </div>
-    </script>
+        <img class="img-circle" data-bind="attr: { src: currentItem.user.picture.thumbnailUrl }" width="40%" height="auto">
+        <p class="editableListItem">
+            <label>Nome:<span data-bind="text: currentItem.user.name.first"></span></label>
+        </p>
+        <p class="editableListItem">
+            <label>Sexo:<span data-bind="text: currentItem.user.gender"></span></label>
+        </p>
+        <p class="editableListItem">
+            <label>Email:<span data-bind="text: currentItem.user.email"></span></label>
+        </p>
+        <p class="editableListItem">
+            <label>Telefone:<span data-bind="text: currentItem.user.phone"></span></label>
+        </p>
+
+    </div>
+    
+    <div class="button-group button-group">
+        <a data-role="button" data-bind="events: { click: nextClick }">Proximo</a>
+        <a class="primary" data-role="button" data-bind="events: { click: saveClick }">Salvar</a>
+    </div>
+
 </div>

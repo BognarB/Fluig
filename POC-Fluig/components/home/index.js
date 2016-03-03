@@ -2,7 +2,9 @@
 
 app.home = kendo.observable({
     onShow: function () {},
-    afterShow: function () {}
+    afterShow: function () {
+        app.mobileApp.hideLoading();
+    }
 });
 
 // START_CUSTOM_CODE_home
@@ -47,7 +49,6 @@ app.home = kendo.observable({
         if (data && data.result) {
             app.user = data.result;
             setTimeout(function () {
-                app.mobileApp.hideLoading();
                 app.mobileApp.navigate('components/' + redirect + '/view.html');
             }, 0);
         } else {
@@ -79,6 +80,8 @@ app.home = kendo.observable({
             if (!model.validateData(model)) {
                 return false;
             }
+            app.mobileApp.showLoading();
+            
             provider.Users.login(email, password, successHandler, init);
         },
         register: function () {
@@ -94,7 +97,8 @@ app.home = kendo.observable({
             if (!model.validateData(model)) {
                 return false;
             }
-
+            app.mobileApp.showLoading();
+            
             provider.Users.register(email, password, attrs, successHandler, init);
         },
         facebookLogin: function () {
