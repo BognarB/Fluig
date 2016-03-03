@@ -34,7 +34,8 @@
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
     color: #fff;
-    background-color: #10c4b2;
+    background-color: #02a2c9;
+    
 }
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
@@ -171,7 +172,9 @@
 #kendoUiMobileApp .editableListItem label span {
     display: block;
     width: 85%;
-    border-radius:5px;  
+      height: 26px;
+    border-color:#e5e5e5;
+    border-radius:6px;  
     border-style:ridge;
     opacity: .9;
 }
@@ -199,7 +202,7 @@
 input[type=email] {
      width:108%;
     margin-left:-40px;
-    border-color: #999
+    border-color:#e5e5e5
   border:100%;
     border-radius: 10px;
     height: 40px;
@@ -211,7 +214,7 @@ input[type=email] {
 input[type=password]{
      width:108%;
     margin-left:-40px;
-    border-color: rgb(229, 229, 229);
+    border-color: #e4e2e2
   border:100%;
     border-radius: 10px;
     height: 40px;
@@ -225,5 +228,28 @@ input[type=password]{
 
 
 }
+#kendoUiMobileApp.km-flat .button-group .km-button.contatos-fechar{
+    color: #fff;
+    background-color: #02a2c9;
+     width: 7em;
+    top: -68px;
+     margin-left: 170px;
+    display: inline-block;
+}
+#kendoUiMobileApp.km-flat .button-group .km-button.excluir{
+    color: #fff;
+    border: 50%;
+    width: 7em;
+    background-color: #b2b2b2;
+    display: inline-block;
+}
+.km-flat .km-view .km-tabstrip .km-button.km-state-active {
+    background-color: #02a2c9;
+}
+
+.km-flat .km-view .km-content {
+    background-color: rgb(255, 255, 255);
+}
+
 
 /* END_CUSTOM_CODE_kendoUiMobileApp */
