@@ -7,8 +7,6 @@ app.novoContatoView = kendo.observable({
     }
 });
 
-<<<<<<< HEAD
-=======
 function getBinFromURL(URL){
     
    /* jQuery.getJSON('//image2datauri.jit.su?cb=?', {
@@ -24,7 +22,6 @@ function getBinFromURL(URL){
     })*/
 }
 
->>>>>>> origin/master
 
 // START_CUSTOM_CODE_novoContatoView
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
@@ -87,7 +84,6 @@ function getBinFromURL(URL){
                 }
             }
         },
-<<<<<<< HEAD
     },
     dataSource = new kendo.data.DataSource(dataSourceOptions),
     novoContatoViewModel = kendo.observable({
@@ -103,7 +99,6 @@ function getBinFromURL(URL){
             dataSource.fetch(function(){
                 app.mobileApp.hideLoading();
                 itemModel = this.data()[0];
-=======
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         novoContatoViewModel = kendo.observable({
             dataSource: dataSource,
@@ -114,7 +109,6 @@ function getBinFromURL(URL){
                 var item = e.view.params.uid,
                     dataSource = novoContatoViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
->>>>>>> origin/master
                 itemModel.user.picture.thumbnailUrl = processImage(itemModel.user.picture.thumbnail);
                 if (!itemModel.user.name.first) {
                     itemModel.user.name.first = String.fromCharCode(160);
