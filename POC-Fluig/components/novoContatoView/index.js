@@ -7,6 +7,24 @@ app.novoContatoView = kendo.observable({
     }
 });
 
+<<<<<<< HEAD
+=======
+function getBinFromURL(URL){
+    
+   /* jQuery.getJSON('//image2datauri.jit.su?cb=?', {
+      url: 'http://nodejs.org/images/logo-light.png'
+    }, function(data) {
+
+      var image   = new Image();
+      var canvas  = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+
+      console.log(data.data);
+      
+    })*/
+}
+
+>>>>>>> origin/master
 
 // START_CUSTOM_CODE_novoContatoView
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
@@ -69,6 +87,7 @@ app.novoContatoView = kendo.observable({
                 }
             }
         },
+<<<<<<< HEAD
     },
     dataSource = new kendo.data.DataSource(dataSourceOptions),
     novoContatoViewModel = kendo.observable({
@@ -84,6 +103,18 @@ app.novoContatoView = kendo.observable({
             dataSource.fetch(function(){
                 app.mobileApp.hideLoading();
                 itemModel = this.data()[0];
+=======
+        dataSource = new kendo.data.DataSource(dataSourceOptions),
+        novoContatoViewModel = kendo.observable({
+            dataSource: dataSource,
+            itemClick: function(e) {
+                app.mobileApp.navigate('#components/novoContatoView/details.html?uid=' + e.dataItem.uid);
+            },
+            detailsShow: function(e) {
+                var item = e.view.params.uid,
+                    dataSource = novoContatoViewModel.get('dataSource'),
+                    itemModel = dataSource.getByUid(item);
+>>>>>>> origin/master
                 itemModel.user.picture.thumbnailUrl = processImage(itemModel.user.picture.thumbnail);
                 if (!itemModel.user.name.first) {
                     itemModel.user.name.first = String.fromCharCode(160);
