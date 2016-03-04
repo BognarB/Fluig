@@ -144,8 +144,7 @@ app.home = kendo.observable({
     parent.set('homeModel', homeModel);
     parent.set('afterShow', function () {
         homeModel.resetForm();
-        provider.Users.currentUser(successHandler,init);
     });
-    
+
 })(app.home);
 // END_CUSTOM_CODE_homeModel
