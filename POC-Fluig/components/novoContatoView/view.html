@@ -6,16 +6,16 @@
 
         <img class="img-circle" data-bind="attr: { src: currentItem.user.picture.thumbnailUrl }" width="40%" height="auto">
         <p class="editableListItem">
-            <label>Nome:<span data-bind="text: currentItem.user.name.first"></span></label>
+            <label>Nome:<input type="text" data-bind="value: currentItem.user.name.first"></input></label>
         </p>
         <p class="editableListItem">
-            <label>Sexo:<span data-bind="text: currentItem.user.gender"></span></label>
+            <label>Sexo:<input type="text" data-bind="value: currentItem.user.gender"></input></label>
         </p>
         <p class="editableListItem">
-            <label>Email:<span data-bind="text: currentItem.user.email"></span></label>
+            <label>Email:<input type="text" data-bind="value: currentItem.user.email"></input></label>
         </p>
         <p class="editableListItem">
-            <label>Telefone:<span data-bind="text: currentItem.user.phone"></span></label>
+            <label>Telefone:<input type="text" data-bind="value: currentItem.user.phone"></input></label>
         </p>
 
     </div>

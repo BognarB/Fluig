@@ -100,8 +100,10 @@ app.novoContatoView = kendo.observable({
         nextClick: function() {
             var dataSource = novoContatoViewModel.get('dataSource');
             app.mobileApp.showLoading();
-            dataSource.read();
-            window.location.reload();
+            dataSource.read().then(function(){
+                window.location.reload();
+                app.mobileApp.hideLoading();                
+            });
         },
         currentItem: null
     });
