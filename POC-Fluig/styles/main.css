@@ -171,7 +171,8 @@
     margin-top: 10px;
     text-align: center;
     
-    margin-left: 90px;
+    margin-left: 30%;
+    
     /* Half the width */
 }
 #kendoUiMobileApp.km-flat .button-group .km-button.totvs {
@@ -181,18 +182,21 @@
 #kendoUiMobileApp.km-flat .button-group .km-button.totvs-1 {
     background-color: #e4e2e2;
 }
+
+
 input {
-    width: 108%;
-   
+    width: 100%;   
     border-color: #e5e5e5 border: 100%;
     border-radius: 10px;
     height: 40px;
+    margin: 0;
 }
 
 .img-app {
     margin-top: 0px;
     margin-left: 85px;
 }
+
 #kendoUiMobileApp.km-flat .button-group .km-button.contatos-fechar {
     color: #fff;
     background-color: #02a2c9;

@@ -7,30 +7,28 @@
     <div class="signin-view">
         <img class="img-app" src="totvs_pos-636x344.jpg" width="50%">
         <form>
-            <ul >
-                <div>
-                    <labe>
-                        <p>
-                            <input type="text" data-bind="value: homeModel.userName" placeholder="User" required autofocus>
-                        </p>
-                       
-                    </labe>
-                </di>
-              <div>
-                    <label> 
-                        <p>
-                            <input type="password" data-bind="value: homeModel.password" placeholder="Password" required>
-                        </p>
-                       
-                    </label>
-                </div>
-            </ul>
+            <div>
+                <label>
+                    <p>
+                        <input type="text" data-bind="value: homeModel.userName" placeholder="User" required autofocus>
+                    </p>
+                    
+                </label>
+            </div>
+            <div>
+                <label> 
+                    <p>
+                        <input type="password" data-bind="value: homeModel.password" placeholder="Password" required>
+                    </p>
+                    
+                </label>
+            </div>
             <div class="button-group button-group-vertical">
                 <a data-role="button" class="totvs" data-bind="events: { click: homeModel.signin }">Entrar</a>
                 <p align="center">
                     ou
                 </p>
-             	<a data-role="button" class="totvs"data-bind="events: { click: homeModel.facebookLogin }">Entrar com Facebook</a>
+                <a data-role="button" class="totvs"data-bind="events: { click: homeModel.facebookLogin }">Entrar com Facebook</a>
             </div>
             <div class="button-group button-group-vertical">
                 
@@ -46,35 +44,35 @@
     <div class="signup-view" style="display:none;">
         <form>
             <ul data-role="listview" data-style="inset">
-                 <li>
-                    <label>Username
-                        <input type="text" data-bind="value: homeModel.userName" required>
-                    </label>
-                </li>
-                <li>
-                    <label>Email
-                        <input type="email" data-bind="value: homeModel.email" required>
-                    </label>
-                </li>
-                <li>
-                    <label>Password
-                        <input type="password" data-bind="value: homeModel.password">
-                    </label>
-                </li>
-                <li>
-                    <label>Name
-                        <input type="text" data-bind="value: homeModel.displayName">
-                    </label>
-                </li>
-            </ul>
-            <div class="button-group button-group-vertical">
-                <a class="primary" data-role="button" data-bind="events: { click: homeModel.register }">Register</a>
-                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Sign In</a>
-            </div>
-        </form>
-    </div>
-    <div class="offline" align="center" style="display:none;">
-        You are currently offline. Before using this app in offline mode you must initialize it while you are online
-    </div>
-    <!-- END_CUSTOM_CODE_home -->
+               <li>
+                <label>Username
+                    <input type="text" data-bind="value: homeModel.userName" required>
+                </label>
+            </li>
+            <li>
+                <label>Email
+                    <input type="email" data-bind="value: homeModel.email" required>
+                </label>
+            </li>
+            <li>
+                <label>Password
+                    <input type="password" data-bind="value: homeModel.password">
+                </label>
+            </li>
+            <li>
+                <label>Name
+                    <input type="text" data-bind="value: homeModel.displayName">
+                </label>
+            </li>
+        </ul>
+        <div class="button-group button-group-vertical">
+            <a class="primary" data-role="button" data-bind="events: { click: homeModel.register }">Register</a>
+            <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Sign In</a>
+        </div>
+    </form>
+</div>
+<div class="offline" align="center" style="display:none;">
+    You are currently offline. Before using this app in offline mode you must initialize it while you are online
+</div>
+<!-- END_CUSTOM_CODE_home -->
 </div>
