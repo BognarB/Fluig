@@ -148,17 +148,18 @@
 
 #kendoUiMobileApp.km-nova span.km-switch.km-switch-on input[type=checkbox]:checked + span + span {
     display: block;
+      margin-left:40px;!important;
     width: 50%;
     height: 26px;
     border-color: #e5e5e5;
     border-radius: 6px;
     border-style: ridge;
     opacity: .9;
-    !important;
+ 
 }
 #kendoUiMobileApp .editableListItem label span {
     display: block;
-    width: 85%;
+    width: 100%;
     height: 26px;
     border-color: #e5e5e5;
     border-radius: 6px;
@@ -182,7 +183,7 @@
 }
 input {
     width: 108%;
- 
+   
     border-color: #e5e5e5 border: 100%;
     border-radius: 10px;
     height: 40px;
@@ -195,7 +196,7 @@ input {
 #kendoUiMobileApp.km-flat .button-group .km-button.contatos-fechar {
     color: #fff;
     background-color: #02a2c9;
-    float: right;
+    
     width: 11em;
 }
 #kendoUiMobileApp.km-flat .button-group .km-button.excluir {
@@ -203,7 +204,7 @@ input {
     border: 50%;
     width: 11em;
     background-color: #b2b2b2;
-    float: left;
+   
 }
 .km-flat .km-view .km-tabstrip .km-button.km-state-active {
     background-color: #02a2c9;
@@ -213,5 +214,10 @@ input {
 }
 .signin-view {
     margin-top: 5%;
+}
+.km-widget, .km-widget textarea{
+    
+   
+    
 }
 /* END_CUSTOM_CODE_kendoUiMobileApp */
