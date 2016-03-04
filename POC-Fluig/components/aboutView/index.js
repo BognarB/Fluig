@@ -22,7 +22,7 @@ app.aboutView = kendo.observable({
         },
         clearLocalData: function(){
             reset();
-            alert('Storage Cleared!');
+            alert('Dados apagados!');
         }
     });
 
