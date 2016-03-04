@@ -1,23 +1,23 @@
-<div data-layout="main" data-role="view"  data-layout="main" data-model="app.aboutView" data-show="app.aboutView.onShow" data-after-show="app.aboutView.afterShow">
+<div data-role="view"  data-layout="main" data-model="app.aboutView" data-show="app.aboutView.onShow" data-after-show="app.aboutView.afterShow">
     <div class="about-view" data-bind="invisible:error">
         <div class="icon-group">
 
-
             <div class="app-details">
-                <h2>POC-TOTVS</h2>
+                <h2>POC - TOTVS</h2>
                 <h4>Version 1</h4>
             </div>
         </div>
+        <img src="totvs+progress.png" width="70%" style="text-align: center;"/>
 
-        <p>App description</p>
+        <p>Este App é uma POC para estreitar o relacionamento entre a PROGRESS e a TOTVS.</p>
 
-        <div class="button-group button-group-vertical">
-            <a data-role="button" data-rel="external" href="mailto:support@example.com">Entre em contato</a>
-            <a data-role="button" data-rel="external" href="#" onclick="app.aboutView.aboutViewModel.openLink('https://www.facebook.com/Telerik');">Facebook</a>
-            <a data-role="button" data-rel="external" href="#" onclick="app.aboutView.aboutViewModel.openLink('https://twitter.com/telerik');">Twitter</a>
+        <div nome="box" class="button-group button-group-vertical">
+            <a data-role="button" data-rel="external" href="#box">Contato</a>
+            <a data-role="button" data-rel="external" href="#box" onclick="app.aboutView.aboutViewModel.openLink('https://www.facebook.com/Telerik');">Facebook</a>
+            <a data-role="button" data-rel="external" href="#box" onclick="app.aboutView.aboutViewModel.openLink('https://twitter.com/telerik');">Twitter</a>
         </div>
         <div class="button-group button-group-vertical">
-           <a class='primary' data-role="button" onclick="app.aboutView.aboutViewModel.clearLocalData();">Limpar dados</a>
+           <a class='primary' data-role="button" onclick="app.aboutView.aboutViewModel.clearLocalData();">Limpar contatos gravados</a>
         </div>
         <!-- START_CUSTOM_CODE_aboutViewModel -->
         <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
