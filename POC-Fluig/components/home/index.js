@@ -73,7 +73,7 @@ app.home = kendo.observable({
             },
             signin: function () {
                 var model = homeModel,
-                    userName = model.user.toLowerCase(),
+                    userName = model.userName.toLowerCase(),
                     password = model.password;
 
                 if (!model.validateData(model)) {
