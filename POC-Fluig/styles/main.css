@@ -199,7 +199,7 @@
    
   background-color:#e4e2e2;
 }
-input[type=email] {
+input[type=text] {
      width:108%;
     margin-left:-40px;
     border-color:#e5e5e5
@@ -232,18 +232,17 @@ input[type=password]{
 #kendoUiMobileApp.km-flat .button-group .km-button.contatos-fechar{
     color: #fff;
     background-color: #02a2c9;
-     width: 7em;
-    top: -68px;
-     margin-left: 170px;
-    display: inline-block;
+    float:right;
+     width: 11em;
+    
 }
 
 #kendoUiMobileApp.km-flat .button-group .km-button.excluir{
     color: #fff;
     border: 50%;
-    width: 7em;
+    width: 11em;
     background-color: #b2b2b2;
-    display: inline-block;
+    float:left;
 }
 .km-flat .km-view .km-tabstrip .km-button.km-state-active {
     background-color: #02a2c9;

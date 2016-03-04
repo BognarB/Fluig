@@ -11,7 +11,7 @@
                 <div>
                     <labe>
                         <p>
-                            <input type="email" data-bind="value: homeModel.email" placeholder="E-mail" required autofocus>
+                            <input type="text" data-bind="value: homeModel.userName" placeholder="User" required autofocus>
                         </p>
                        
                     </labe>
@@ -19,7 +19,7 @@
               <div>
                     <label> 
                         <p>
-                            <input type="password" data-bind="value: homeModel.password" placeholder="password" required>
+                            <input type="password" data-bind="value: homeModel.password" placeholder="Password" required>
                         </p>
                        
                     </label>
@@ -46,6 +46,11 @@
     <div class="signup-view" style="display:none;">
         <form>
             <ul data-role="listview" data-style="inset">
+                 <li>
+                    <label>Username
+                        <input type="text" data-bind="value: homeModel.userName" required>
+                    </label>
+                </li>
                 <li>
                     <label>Email
                         <input type="email" data-bind="value: homeModel.email" required>
