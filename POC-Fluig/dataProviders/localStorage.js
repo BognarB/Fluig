@@ -1,17 +1,8 @@
 'use strict';
 
-function setTestData(){
-	localStorage["contacts"] = JSON.stringify([]);
-}
-
-function reset(){
-	setTestData();
-	window.location.reload();
-}
-
 (function () {
 	if(localStorage["contacts"] == undefined){
-		setTestData();
+		localStorage["contacts"] = JSON.stringify([]);
 	}
 	var provider = app.data.localStorage = new kendo.data.DataSource({
 		transport: {

@@ -18,12 +18,10 @@ app.aboutView = kendo.observable({
         },
         clearLocalData: function(){
             app.mobileApp.showLoading();
-            var db = localStorage['contacts'];
-            db.clear();
-            db.sync();
+			localStorage["contacts"] = JSON.stringify([]);
             app.mobileApp.hideLoading();
-            app.mobileApp.navigate('#:back');
             window.location.reload();
+            app.mobileApp.navigate('#:back');
             app.notification.show('Dados apagados!','info');
         }
     });
