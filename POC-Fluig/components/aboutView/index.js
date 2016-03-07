@@ -21,7 +21,7 @@ app.aboutView = kendo.observable({
             localDataProvider.clear();
             localDataProvider.sync();
             app.notification.show('Dados apagados!','info');
-            app.mobileApp.navigate('components/home/view.html');
+            app.mobileApp.navigate('#:back');
         }
     });
     parent.set('aboutViewModel', aboutViewModel);
