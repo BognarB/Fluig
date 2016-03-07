@@ -18,7 +18,7 @@ app.aboutView = kendo.observable({
         },
         clearLocalData: function(){
             app.mobileApp.showLoading();
-            localStorage.clear();
+            localStorage.clear('dataSource');
             localStorage.sync();
             app.mobileApp.hideLoading();
             app.mobileApp.navigate('#:back');
