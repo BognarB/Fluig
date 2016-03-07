@@ -18,11 +18,11 @@ app.aboutView = kendo.observable({
         },
         clearLocalData: function(){
             app.mobileApp.showLoading();
-            app.localStorage.clear();
-            app.localStorage.sync();
+            localStorage.clear();
+            localStorage.sync();
+            app.mobileApp.hideLoading();
             app.mobileApp.navigate('#:back');
             app.notification.show('Dados apagados!','info');
-            app.mobileApp.hideLoading();
         }
     });
     parent.set('aboutViewModel', aboutViewModel);
