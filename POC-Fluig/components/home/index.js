@@ -21,7 +21,7 @@ app.home = kendo.observable({
     registerRedirect = 'novoContatoView',
     signinRedirect = 'novoContatoView',
     init = function (error) {
-
+		
         if (error) {
             if (error.message) {
                 alert(error.message);
@@ -62,12 +62,12 @@ app.home = kendo.observable({
         password: '',
         validateData: function (data) {
             if (!data.userName) {
-                alert('Missing email');
+                alert('User não preenchido!');
                 return false;
             }
 
             if (!data.password) {
-                alert('Missing password');
+                alert('Senha não preenchida!');
                 return false;
             }
 
