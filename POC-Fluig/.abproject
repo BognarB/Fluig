@@ -44,6 +44,7 @@
   ],
   "CorePlugins": [
     "org.apache.cordova.device-orientation",
+    "org.apache.cordova.file",
     "org.apache.cordova.file-transfer",
     "org.apache.cordova.inappbrowser",
     "org.apache.cordova.media",
