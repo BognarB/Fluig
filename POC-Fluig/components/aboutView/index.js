@@ -18,8 +18,7 @@ app.aboutView = kendo.observable({
         },
         clearLocalData: function(){
             var localDataProvider = app.data.localStorage;
-            localDataProvider.run();
-            localDataProvider.clear();
+            localDataProvider.clearStorage();
             localDataProvider.sync();
             app.notification.show('Dados apagados!','info');
             app.mobileApp.navigate('#:back');
