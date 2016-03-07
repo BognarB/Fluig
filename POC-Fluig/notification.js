@@ -5,6 +5,6 @@ $(document).ready(function(){
 			top: 100,
 			right: 70
 		},
-        autoHideAfter: 3000
+        autoHideAfter: 2000
     }).data("kendoNotification");
 });
