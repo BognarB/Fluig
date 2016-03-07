@@ -22,7 +22,7 @@
     "Portrait",
     "Landscape"
   ],
-  "AndroidHardwareAcceleration": "false",
+  "AndroidHardwareAcceleration": "False",
   "iOSStatusBarStyle": "Default",
   "Framework": "Cordova",
   "WP8TileTitle": "",
@@ -41,5 +41,13 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "org.apache.cordova.device-orientation",
+    "org.apache.cordova.file-transfer",
+    "org.apache.cordova.inappbrowser",
+    "org.apache.cordova.media",
+    "org.apache.cordova.network-information",
+    "org.apache.cordova.splashscreen"
   ]
 }
