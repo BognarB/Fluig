@@ -17,11 +17,18 @@ app.aboutView = kendo.observable({
             }
         },
         clearLocalData: function(){
-            var dataSource = contactsListViewModel.get('dataSource');
-            dataSource.clear();
             app.notification.show('Dados apagados!','info');
+			var dataSource = aboutViewModel.get('dataSource'),
+			
+            dataSource.clear();
             app.mobileApp.navigate('#:back');
         }
     });
-    parent.set('aboutViewModel', aboutViewModel);
+    if (typeof dataProvider.sbProviderReady === 'function') {
+        dataProvider.sbProviderReady(function dl_sbProviderReady() {
+            parent.set('aboutViewModel', aboutViewModel);
+        });
+    } else {
+        parent.set('aboutViewModel', aboutViewModel);
+    }
 })(app.aboutView);
