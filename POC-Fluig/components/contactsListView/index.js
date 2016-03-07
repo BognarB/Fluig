@@ -7,10 +7,6 @@ app.contactsListView = kendo.observable({
     }
 });
 
-// START_CUSTOM_CODE_contactsListView
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_contactsListView
 (function(parent) {
     var 
     dataProvider = app.data.ramdomUser,
@@ -20,7 +16,6 @@ app.contactsListView = kendo.observable({
             var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
             img = 'data:image/png;base64,' + empty1x1png;
         }
-
         return img;
     },
     contactsListViewModel = kendo.observable({
@@ -30,17 +25,13 @@ app.contactsListView = kendo.observable({
         },
         deleteClick: function() {
             var dataSource = contactsListViewModel.get('dataSource');
-
             dataSource.remove(this.currentItem);
-
             dataSource.one('sync', function(e) {
                 app.mobileApp.navigate('#:back');
             });
-
             dataSource.one('error', function() {
                 dataSource.cancelChanges();
             });
-
             dataSource.sync();
         },
         detailsShow: function(e) {
@@ -48,17 +39,14 @@ app.contactsListView = kendo.observable({
             dataSource = contactsListViewModel.get('dataSource'),
             itemModel = dataSource.getByUid(item);
             itemModel.picture.mediumUrl = processImage(itemModel.picture.thumbnail);
-
             if (!itemModel.name.first) {
                 itemModel.name.first = String.fromCharCode(160);
             }
-
             contactsListViewModel.set('currentItem', null);
             contactsListViewModel.set('currentItem', itemModel);
         },
         currentItem: null
     });
-
     if (typeof dataProvider.sbProviderReady === 'function') {
         dataProvider.sbProviderReady(function dl_sbProviderReady() {
             parent.set('contactsListViewModel', contactsListViewModel);
@@ -67,6 +55,3 @@ app.contactsListView = kendo.observable({
         parent.set('contactsListViewModel', contactsListViewModel);
     }
 })(app.contactsListView);
-
-// START_CUSTOM_CODE_contactsListViewModel
-// END_CUSTOM_CODE_contactsListViewModel
