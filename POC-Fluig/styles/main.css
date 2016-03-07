@@ -189,8 +189,7 @@ input {
     font-size: 115%;
 }
 .img-app {
-    margin-top: 0px;
-    margin-left: 85px;
+    margin-left: 25%;
 }
 #kendoUiMobileApp.km-flat .button-group .km-button.contatos-fechar {
     color: #fff;
