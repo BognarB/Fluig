@@ -43,6 +43,7 @@
     "ID_RESOLUTION_HD720P"
   ],
   "CorePlugins": [
+    "com.telerik.LivePatch",
     "org.apache.cordova.device-orientation",
     "org.apache.cordova.file",
     "org.apache.cordova.file-transfer",

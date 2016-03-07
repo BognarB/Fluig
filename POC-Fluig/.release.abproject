@@ -1,3 +1,7 @@
 {
-  "CordovaPluginVariables": {}
+  "CordovaPluginVariables": {
+    "com.telerik.LivePatch": {
+      "IS_API_ENABLED": "true"
+    }
+  }
 }
