@@ -95,6 +95,7 @@ app.novoContatoView = kendo.observable({
         saveClick: function() {
             localDataProvider.add(novoContatoViewModel.currentItem.user);
             localDataProvider.sync();
+            alert('Contato Salvo!');
             novoContatoViewModel.nextClick();
         },
         nextClick: function() {
@@ -102,6 +103,7 @@ app.novoContatoView = kendo.observable({
             app.mobileApp.showLoading();
             dataSource.read().then(function(){
                 window.location.reload();
+                // kendo.bind($("#novoContatoView"),novoContatoViewModel);
                 app.mobileApp.hideLoading();                
             });
         },
