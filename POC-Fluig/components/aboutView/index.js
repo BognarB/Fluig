@@ -18,7 +18,7 @@ app.aboutView = kendo.observable({
         },
         clearLocalData: function(){
             reset();
-            alert('Dados apagados!');
+            app.notification.show('Dados apagados!','info');
         }
     });
 

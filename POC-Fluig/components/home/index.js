@@ -24,7 +24,7 @@ app.home = kendo.observable({
 		
         if (error) {
             if (error.message) {
-                alert(error.message);
+                app.notification.show(error.message,'error');
             }
         }
 
@@ -62,12 +62,12 @@ app.home = kendo.observable({
         password: '',
         validateData: function (data) {
             if (!data.userName) {
-                alert('User não preenchido!');
+                app.notification.show('User não preenchido!','error');
                 return false;
             }
 
             if (!data.password) {
-                alert('Senha não preenchida!');
+                app.notification.show('Senha não preenchida!','error');
                 return false;
             }
 

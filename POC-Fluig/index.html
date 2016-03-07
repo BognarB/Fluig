@@ -5,11 +5,14 @@
     <title></title>
     <meta charset="utf-8">
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="kendo/styles/kendo.common-fiori.min.css" />
+    <link rel="stylesheet" href="kendo/styles/kendo.fiori.min.css" />
     <link href="styles/main.css" rel="stylesheet">
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
+    <script src="kendo/js/kendo.all.min.js"></script>
     <script src="identity-provider.js"></script>
     <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
     <script src="app.js"></script>
@@ -17,6 +20,7 @@
     <script src="dataProviders/pocFluig.js"></script>
     <script src="dataProviders/ramdomUser.js"></script>
     <script src="dataProviders/localStorage.js"></script>
+    <script src="notification.js"></script>
 
 </head>
 
@@ -26,6 +30,7 @@
     <script src="components/novoContatoView/index.js"></script>
     <script src="components/home/index.js"></script>
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
+    <span data-icon="organize" id="popUpNotification"></span>
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
