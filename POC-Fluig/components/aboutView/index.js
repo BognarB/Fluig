@@ -17,7 +17,9 @@ app.aboutView = kendo.observable({
             }
         },
         clearLocalData: function(){
-            reset();
+            var localDataProvider = contactsListViewModel.get('dataSource');
+            localDataProvider.remove.all;
+            localDataProvider.sync();
             app.notification.show('Dados apagados!','info');
         }
     });
