@@ -3,6 +3,7 @@
 app.novoContatoView = kendo.observable({
     onShow: function() {},
     afterShow: function() {
+		window.location.reload();
     	app.mobileApp.hideLoading();
     }
 });

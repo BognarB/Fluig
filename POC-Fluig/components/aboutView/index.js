@@ -17,18 +17,13 @@ app.aboutView = kendo.observable({
             }
         },
         clearLocalData: function(){
-            app.notification.show('Dados apagados!','info');
-			var dataSource = aboutViewModel.get('dataSource'),
-			
-            dataSource.clear();
+            app.mobileApp.showLoading();
+            app.localStorage.clear();
+            app.localStorage.sync();
             app.mobileApp.navigate('#:back');
+            app.notification.show('Dados apagados!','info');
+            app.mobileApp.hideLoading();
         }
     });
-    if (typeof dataProvider.sbProviderReady === 'function') {
-        dataProvider.sbProviderReady(function dl_sbProviderReady() {
-            parent.set('aboutViewModel', aboutViewModel);
-        });
-    } else {
-        parent.set('aboutViewModel', aboutViewModel);
-    }
+    parent.set('aboutViewModel', aboutViewModel);
 })(app.aboutView);
