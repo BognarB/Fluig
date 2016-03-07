@@ -18,7 +18,9 @@
     if (window.cordova) {
         document.addEventListener('deviceready', function() {
             if (navigator && navigator.splashscreen) {
-                navigator.splashscreen.hide();
+                setTimeout(function(){ 
+                    navigator.splashscreen.hide();
+                }, 3000);
             }
             bootstrap();
         }, false);

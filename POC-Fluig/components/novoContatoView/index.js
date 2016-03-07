@@ -95,8 +95,8 @@ app.novoContatoView = kendo.observable({
         saveClick: function() {
             localDataProvider.add(novoContatoViewModel.currentItem.user);
             localDataProvider.sync();
-            alert('Contato Salvo!');
             novoContatoViewModel.nextClick();
+            alert('Contato Salvo!');
         },
         nextClick: function() {
             var dataSource = novoContatoViewModel.get('dataSource');
