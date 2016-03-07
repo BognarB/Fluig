@@ -18,7 +18,7 @@
             if (navigator && navigator.splashscreen) {
                 setTimeout(function(){ 
                     navigator.splashscreen.hide();
-                }, 3000);
+                }, 4000);
             }
             bootstrap();
         }, false);
