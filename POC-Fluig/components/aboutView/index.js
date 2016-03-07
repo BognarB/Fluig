@@ -21,6 +21,5 @@ app.aboutView = kendo.observable({
             app.notification.show('Dados apagados!','info');
         }
     });
-
     parent.set('aboutViewModel', aboutViewModel);
 })(app.aboutView);

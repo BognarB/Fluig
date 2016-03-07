@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title></title>
     <meta charset="utf-8">
@@ -11,25 +10,20 @@
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-    <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <script src="kendo/js/kendo.all.min.js"></script>
     <script src="identity-provider.js"></script>
-    <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
     <script src="app.js"></script>
     <script src="bower_components/everlive/min/everlive.all.min.js"></script>
     <script src="dataProviders/pocFluig.js"></script>
     <script src="dataProviders/ramdomUser.js"></script>
     <script src="dataProviders/localStorage.js"></script>
     <script src="notification.js"></script>
-
 </head>
-
 <body id="kendoUiMobileApp">
     <script src="components/aboutView/index.js"></script>
     <script src="components/contactsListView/index.js"></script>
     <script src="components/novoContatoView/index.js"></script>
     <script src="components/home/index.js"></script>
-    <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <span data-icon="organize" id="popUpNotification"></span>
     <div data-role="layout" data-id="main">
         <header data-role="header">
@@ -37,7 +31,6 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
-        <!-- application views will be rendered here -->
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/novoContatoView/view.html" data-icon="organize">Novo Contato</a>
@@ -53,11 +46,8 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
-        <!-- application views will be rendered here -->
         <footer data-role="footer">
         </footer>
     </div>
-    <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
 </body>
-
 </html>

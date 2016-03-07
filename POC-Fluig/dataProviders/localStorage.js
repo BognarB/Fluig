@@ -10,12 +10,9 @@ function reset(){
 }
 
 (function () {
-
-
 	if(localStorage["contacts"] == undefined){
 		setTestData();
 	}
-
 	var provider = app.data.localStorage = new kendo.data.DataSource({
 		transport: {
 			create: function(options){
@@ -49,8 +46,4 @@ function reset(){
 			}
 		}
 	});
-
-
-
-
 })();

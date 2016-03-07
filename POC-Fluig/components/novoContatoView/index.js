@@ -7,13 +7,6 @@ app.novoContatoView = kendo.observable({
     }
 });
 
-
-
-// START_CUSTOM_CODE_novoContatoView
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_novoContatoView
-
 (function(parent) {
     var dataProvider = app.data.ramdomUser,
     localDataProvider = app.data.localStorage,
@@ -22,7 +15,6 @@ app.novoContatoView = kendo.observable({
             var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
             img = 'data:image/png;base64,' + empty1x1png;
         }
-
         return img;
     },
     dataSourceOptions = {
@@ -32,15 +24,12 @@ app.novoContatoView = kendo.observable({
                 url: dataProvider.url
             }
         },
-
         change: function(e) {
             var data = this.data();
             for (var i = 0; i < data.length; i++) {
                 var dataItem = data[i];
-
                 dataItem['user.picture.thumbnailUrl'] =
                 processImage(dataItem['user.picture.thumbnail']);
-
             }
         },
         schema: {
@@ -75,12 +64,9 @@ app.novoContatoView = kendo.observable({
     novoContatoViewModel = kendo.observable({
         dataSource: dataSource,
         detailsShow: function(e) {
-
             app.mobileApp.hideLoading();
-
             var dataSource = novoContatoViewModel.get('dataSource'),
             itemModel;
-
             app.mobileApp.showLoading();
             dataSource.fetch(function(){
                 app.mobileApp.hideLoading();
@@ -103,13 +89,11 @@ app.novoContatoView = kendo.observable({
             app.mobileApp.showLoading();
             dataSource.read().then(function(){
                 window.location.reload();
-                // kendo.bind($("#novoContatoView"),novoContatoViewModel);
                 app.mobileApp.hideLoading();                
             });
         },
         currentItem: null
     });
-
     if (typeof dataProvider.sbProviderReady === 'function') {
         dataProvider.sbProviderReady(function dl_sbProviderReady() {
             parent.set('novoContatoViewModel', novoContatoViewModel);
@@ -118,8 +102,3 @@ app.novoContatoView = kendo.observable({
         parent.set('novoContatoViewModel', novoContatoViewModel);
     }
 })(app.novoContatoView);
-
-// START_CUSTOM_CODE_novoContatoViewModel
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_novoContatoViewModel

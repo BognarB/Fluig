@@ -1,9 +1,5 @@
 <div id="novoContatoView" data-role="view"  data-layout="main" reload='true'  data-model="app.novoContatoView.novoContatoViewModel"  data-bind="events: { show: detailsShow }">
-
-    <!-- <img data-bind="attr: { src: currentItem.user.picture.thumbnailUrl }" width="100%" height="auto"> -->
     <div class="details-content">
-
-
         <img class="img-circle" data-bind="attr: { src: currentItem.user.picture.thumbnailUrl }" width="40%" height="auto">
         <p class="editableListItem">
             <label>Nome:<input type="text" data-bind="value: currentItem.user.name.first"></input></label>
@@ -17,12 +13,9 @@
         <p class="editableListItem">
             <label>Telefone:<input type="text" data-bind="value: currentItem.user.phone"></input></label>
         </p>
-
     </div>
-    
     <div class="button-group button-group">
         <a data-role="button" data-bind="events: { click: nextClick }">Proximo</a>
         <a class="primary" data-role="button" data-bind="events: { click: saveClick }">Salvar</a>
     </div>
-
 </div>

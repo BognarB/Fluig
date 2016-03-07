@@ -1,8 +1,6 @@
 <div data-layout="main" data-role="view"   data-model="app.contactsListView.contactsListViewModel" data-bind="events: { show: detailsShow }" id="contactsListViewModelDetailsView">
     <header data-role="header">
-
     </header>
-
     <div class="details-content">
         <img class="img-circle" data-bind="attr: { src: currentItem.picture.mediumUrl }" width="40%" height="auto">
         <p class="editableListItem">
@@ -22,7 +20,4 @@
         <a data-role="backbutton" align="left" data-bind="events: { click: deleteClick }">Excluir</a>
         <a data-role="backbutton" align="right" class="primary" >Fechar</a>
     </div>
-
-    <!-- START_CUSTOM_CODE_contactsListViewModel  class="excluir" class="contatos-fechar" -->
-    <!-- END_CUSTOM_CODE_contactsListViewModel -->
 </div>
