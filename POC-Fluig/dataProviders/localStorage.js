@@ -12,6 +12,7 @@
 		transport: {
 			create: function(options){
 				//function to create a new local record
+				console.log(options);
 				var localData = JSON.parse(localStorage["contacts"]);
 				localData.push(options.data);
 				localStorage["contacts"] = JSON.stringify(localData);
