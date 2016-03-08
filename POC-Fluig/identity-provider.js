@@ -15,6 +15,7 @@ var IdentityProvider = function (config) {
     var that = this;
     var _currentUser;
     var _token;
+    // get ID NAME and PICTURE develeped by Teixeirinha (not used yet)
     this._getUserInfo = function(callback){
         var user = {};
         $.get('https://graph.facebook.com/v2.5/me',{
@@ -22,11 +23,11 @@ var IdentityProvider = function (config) {
             access_token: _token,
             dataType: 'json'
         },callback);
-    }
+    };
     this.getCurrentUser = function(){
         if(_currentUser) return _currentUser;
         throw "Need to getAccessToken() first";
-    }
+    };
     this.getAccessToken = function (callback) {
         // Begin Authorization
         var authorize_url;
@@ -39,7 +40,7 @@ var IdentityProvider = function (config) {
         ref.addEventListener('loaderror', function (event) {
             alert("Load error: " + event.message);
         });
-    }
+    };
     this.locationChanged = function (loc, callback) {
         if (loc.indexOf('access_token=') !== -1) {
             ref.close();
@@ -50,5 +51,5 @@ var IdentityProvider = function (config) {
                 callback(token);
             });
         }
-    }
+    };
 }
