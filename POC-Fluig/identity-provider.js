@@ -15,7 +15,7 @@ var IdentityProvider = function (config) {
     var that = this;
     var _currentUser;
     var _token;
-    // get ID NAME and PICTURE develeped by Teixeirinha (not used yet)
+    // pega o ID o NOME e a FOTO
     this._getUserInfo = function(callback){
         var user = {};
         $.get('https://graph.facebook.com/v2.5/me',{

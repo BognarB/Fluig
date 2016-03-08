@@ -2,28 +2,28 @@
 'use strict';
 
 (function () {
-	// set data if is undefined
+	// cria o localStorage se não estiver definido
 	if(localStorage["contacts"] == undefined){
 		localStorage["contacts"] = JSON.stringify([]);
 	}
 
-	// set dataSource on a global variable
+	// seta o dataSource como variável global
 	var provider = app.data.localStorage = new kendo.data.DataSource({
 		transport: {
 			create: function(options){
-				//function to create a new local record
+				//função que cria registro local
 				var localData = JSON.parse(localStorage["contacts"]);
 				localData.push(options.data);
 				localStorage["contacts"] = JSON.stringify(localData);
 				options.success(options.data);
 			},
 			read: function(options){
-				// get contacts array
+				// pega o array de contatos gravados localmente
 				var localData = JSON.parse(localStorage["contacts"]);
 				options.success(localData);
 			},
 			destroy: function(options){
-				//delete options.data (record to be deleted)
+				//apaga registro
 				var localData = JSON.parse(localStorage["contacts"]);
 				for(var i=0; i<localData.length; i++){
 					if(options.data.username === localData[i].username){
