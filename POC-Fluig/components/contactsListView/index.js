@@ -11,7 +11,7 @@ app.contactsListView = kendo.observable({
 (function(parent) {
     var 
     dataProvider = app.data.ramdomUser,
-    localDataProvider = app.data.localStorage,
+    localDataProvider = app.data.localStorage, //localStorage dataSource
     processImage = function(img) {
         if (!img) {
             var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';

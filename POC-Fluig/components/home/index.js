@@ -107,7 +107,6 @@ app.home = kendo.observable({
                 provider.Users.loginWithFacebook(token)
                 .then(function () {
                     app.mobileApp.hideLoading();
-                    console.log(facebook.getCurrentUser());
                     provider.Users.currentUser(successHandler, init);
                 });
             });
