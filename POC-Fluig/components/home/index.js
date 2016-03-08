@@ -1,3 +1,4 @@
+//logica da tela de login e cadastro de usuario
 'use strict';
 
 app.home = kendo.observable({

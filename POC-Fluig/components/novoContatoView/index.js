@@ -1,3 +1,4 @@
+//logica da tela que adiciona contato
 'use strict';
 
 app.novoContatoView = kendo.observable({

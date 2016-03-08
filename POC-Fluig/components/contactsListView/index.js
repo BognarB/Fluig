@@ -1,3 +1,4 @@
+//logica das telas lista de contatos e excluir contato
 'use strict';
 
 app.contactsListView = kendo.observable({

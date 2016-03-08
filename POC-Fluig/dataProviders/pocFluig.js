@@ -1,3 +1,4 @@
+//logica do app para logica
 'use strict';
 
 (function() {

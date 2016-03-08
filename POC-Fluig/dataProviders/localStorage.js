@@ -1,3 +1,4 @@
+// logica do local binding
 'use strict';
 
 (function () {

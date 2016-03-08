@@ -1,3 +1,4 @@
+<!-- tela que lista de contatos -->
 <div data-role="view"  data-layout="main" data-model="app.contactsListView" data-show="app.contactsListView.onShow" data-after-show="app.contactsListView.afterShow">
     <ul data-role="listview" data-style="inset" data-template="contactsListViewModelTemplate" data-bind="{ source: contactsListViewModel.dataSource, events: {click: contactsListViewModel.itemClick} }" data-pull-to-refresh="true" data-endless-scroll="false">
     </ul>

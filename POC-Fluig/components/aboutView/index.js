@@ -1,3 +1,4 @@
+//logica da tela about
 'use strict';
 
 app.aboutView = kendo.observable({

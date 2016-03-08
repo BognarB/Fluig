@@ -1,3 +1,4 @@
+//data provider do random user
 'use strict';
 
 (function() {
