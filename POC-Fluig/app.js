@@ -1,3 +1,4 @@
+//logica de navegação da tela inicial
 'use strict';
 
 (function() {

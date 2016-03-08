@@ -1,3 +1,4 @@
+// habilitando o notification do kendo-ui
 $(document).ready(function(){
 	if(!app) app = {};
 	app.notification = $("#popUpNotification").kendoNotification(  {

@@ -1,3 +1,4 @@
+//logica do identity provider - tabela de usuarios internas
 function getParameterByName(name, url) {
     name = name.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
     var regexS = name + '=([^&#]*)';
