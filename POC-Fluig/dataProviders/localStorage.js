@@ -11,12 +11,8 @@
 	var provider = app.data.localStorage = new kendo.data.DataSource({
 		transport: {
 			create: function(options){
-<<<<<<< HEAD
-				//function to create a new local record
 				console.log(options);
-=======
 				//função que cria registro local
->>>>>>> 02684a8533d33dd200d0d001b22055404a2673b5
 				var localData = JSON.parse(localStorage["contacts"]);
 				localData.push(options.data);
 				localStorage["contacts"] = JSON.stringify(localData);
