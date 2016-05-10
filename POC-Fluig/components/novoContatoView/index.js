@@ -81,9 +81,10 @@ app.novoContatoView = kendo.observable({
             });
         },
         saveClick: function() {
+            console.log(novoContatoViewModel.currentItem.user);
             localDataProvider.add(novoContatoViewModel.currentItem.user);
             localDataProvider.sync();
-            novoContatoViewModel.nextClick();
+            // novoContatoViewModel.nextClick();
             app.notification.show('Contato Salvo!','info');
         },
         nextClick: function() {

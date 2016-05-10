@@ -26,11 +26,15 @@ app.contactsListView = kendo.observable({
         },
         deleteClick: function() {
             var dataSource = contactsListViewModel.get('dataSource');
+           
             dataSource.remove(this.currentItem);
+           
             app.notification.show('Contatos Removidos!','info');
+           
             dataSource.one('sync', function(e) {
                 app.mobileApp.navigate('#:back');
             });
+           
             dataSource.one('error', function() {
                 dataSource.cancelChanges();
             });
