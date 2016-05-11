@@ -1,18 +1,18 @@
 <!-- tela que adiciona contato -->
 <div id="novoContatoView" data-role="view"  data-layout="main" reload='true'  data-model="app.novoContatoView.novoContatoViewModel"  data-bind="events: { show: detailsShow }">
     <div class="details-content">
-        <img class="img-circle" data-bind="attr: { src: currentItem.user.picture.thumbnailUrl }" width="40%" height="auto">
+        <img class="img-circle" data-bind="attr: { src: currentItem.picture.thumbnail }" width="40%" height="auto">
         <p class="editableListItem">
-            <label>Nome:<input type="text" data-bind="value: currentItem.user.name.first"></input></label>
+            <label>Nome:<input type="text" data-bind="value: currentItem.name.first"></input></label>
         </p>
         <p class="editableListItem">
-            <label>Sexo:<input type="text" data-bind="value: currentItem.user.gender"></input></label>
+            <label>Sexo:<input type="text" data-bind="value: currentItem.gender"></input></label>
         </p>
         <p class="editableListItem">
-            <label>Email:<input type="text" data-bind="value: currentItem.user.email"></input></label>
+            <label>Email:<input type="text" data-bind="value: currentItem.email"></input></label>
         </p>
         <p class="editableListItem">
-            <label>Telefone:<input type="text" data-bind="value: currentItem.user.phone"></input></label>
+            <label>Telefone:<input type="text" data-bind="value: currentItem.phone"></input></label>
         </p>
     </div>
     <div class="button-group button-group">

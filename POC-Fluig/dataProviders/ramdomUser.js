@@ -3,6 +3,6 @@
 
 (function() {
     app.data.ramdomUser = {
-        url: 'https://randomuser.me/api/'
+        url: 'http://progressbrazilcrm.com.br:3000/api/'
     }
 }());

@@ -11,7 +11,7 @@
 	var provider = app.data.localStorage = new kendo.data.DataSource({
 		transport: {
 			create: function(options){
-				console.log(options);
+				console.log('create:',options);
 				//função que cria registro local
 				var localData = JSON.parse(localStorage["contacts"]);
 				localData.push(options.data);
@@ -21,6 +21,7 @@
 			read: function(options){
 				// pega o array de contatos gravados localmente
 				var localData = JSON.parse(localStorage["contacts"]);
+				console.log('read:',localData);
 				options.success(localData);
 			},
 			destroy: function(options){
@@ -38,10 +39,29 @@
 		},
 		schema: {
 			model: {
-				id: "ID",
+				id: 'ID',
 				fields: {
-					ID: { type: "number", editable: false }
-				}
+                    'name.first': {
+                        field: 'name.first',
+                        defaultValue: ''
+                    },
+                    'name.last': {
+                        field: 'name.last',
+                        defaultValue: ''
+                    },
+                    'picture.thumbnail': {
+                        field: 'picture.thumbnail',
+                        defaultValue: ''
+                    },
+                    'email': {
+                        field: 'email',
+                        defaultValue: ''
+                    },
+                    'phone': {
+                        field: 'phone',
+                        defaultValue: ''
+                    }
+                }
 			}
 		}
 	});
