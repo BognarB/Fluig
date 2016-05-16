@@ -32,10 +32,6 @@
 				var localData = JSON.parse(localStorage["contacts"]);
 				for(var i=0; i<localData.length; i++){
 					if(options.data.ID === localData[i].ID){
-                console.log(options);
-				var localData = JSON.parse(localStorage["contacts"]);
-				for(var i=0; i<localData.length; i++){
-					if(options.data.email === localData[i].email){
 						localData.splice(i,1);
 						break;
 					}
