@@ -27,10 +27,17 @@
 			},
 			destroy: function(options){
 				//apaga registro
+<<<<<<< HEAD
 				console.log('delete',options.data);
 				var localData = JSON.parse(localStorage["contacts"]);
 				for(var i=0; i<localData.length; i++){
 					if(options.data.ID === localData[i].ID){
+=======
+                console.log(options);
+				var localData = JSON.parse(localStorage["contacts"]);
+				for(var i=0; i<localData.length; i++){
+					if(options.data.email === localData[i].email){
+>>>>>>> 88dfa98289a3d2e086b123a3484a7d4d82936cc6
 						localData.splice(i,1);
 						break;
 					}
