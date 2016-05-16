@@ -13,6 +13,7 @@
 			create: function(options){
 				console.log('create:',options);
 				//função que cria registro local
+				options.data.ID = options.data.login.username;
 				var localData = JSON.parse(localStorage["contacts"]);
 				localData.push(options.data);
 				localStorage["contacts"] = JSON.stringify(localData);
@@ -26,9 +27,10 @@
 			},
 			destroy: function(options){
 				//apaga registro
+				console.log('delete',options.data);
 				var localData = JSON.parse(localStorage["contacts"]);
 				for(var i=0; i<localData.length; i++){
-					if(options.data.username === localData[i].username){
+					if(options.data.ID === localData[i].ID){
 						localData.splice(i,1);
 						break;
 					}
@@ -39,29 +41,7 @@
 		},
 		schema: {
 			model: {
-				id: 'ID',
-				fields: {
-                    'name.first': {
-                        field: 'name.first',
-                        defaultValue: ''
-                    },
-                    'name.last': {
-                        field: 'name.last',
-                        defaultValue: ''
-                    },
-                    'picture.thumbnail': {
-                        field: 'picture.thumbnail',
-                        defaultValue: ''
-                    },
-                    'email': {
-                        field: 'email',
-                        defaultValue: ''
-                    },
-                    'phone': {
-                        field: 'phone',
-                        defaultValue: ''
-                    }
-                }
+				id: 'ID'
 			}
 		}
 	});
