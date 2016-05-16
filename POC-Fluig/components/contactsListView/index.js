@@ -26,18 +26,19 @@ app.contactsListView = kendo.observable({
         },
         deleteClick: function() {
             var dataSource = contactsListViewModel.get('dataSource');
-           
+
             dataSource.remove(this.currentItem);
-           
+
             app.notification.show('Contatos Removidos!','info');
-           
+
             dataSource.one('sync', function(e) {
                 app.mobileApp.navigate('#:back');
             });
-           
+
             dataSource.one('error', function() {
                 dataSource.cancelChanges();
             });
+
             dataSource.sync();
         },
         detailsShow: function(e) {
@@ -56,8 +57,15 @@ app.contactsListView = kendo.observable({
     if (typeof dataProvider.sbProviderReady === 'function') {
         dataProvider.sbProviderReady(function dl_sbProviderReady() {
             parent.set('contactsListViewModel', contactsListViewModel);
+            parent.set('onShow', function(){
+                localDataProvider.read();
+            });
         });
     } else {
         parent.set('contactsListViewModel', contactsListViewModel);
+        parent.set('onShow', function(){
+            localDataProvider.read();
+
+        });
     }
 })(app.contactsListView);
